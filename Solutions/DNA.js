@@ -5,9 +5,9 @@ var C = 0;
 var T = 0;
 var G = 0;
 
-const dna_text = fs.readFileSync('../Data Sets/DNA.txt', 'utf8').split("")
+const dna_Array = fs.readFileSync('../Data Sets/Problem Sets/DNA.txt', 'utf8').split("")
 
-dna_text.forEach(x => {
+dna_Array.forEach(x => {
     switch(x){
         case 'A': 
             A+=1;
@@ -22,7 +22,6 @@ dna_text.forEach(x => {
             G+=1;
             return;
         default:
-            console.log(x + ' is not cool');
             return;
     }
 })
