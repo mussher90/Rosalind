@@ -29,3 +29,4 @@ fs.writeFileSync('../Data Sets/Solution Sets/REVCSoln.txt', resultString);
 
 console.log(revc_String + '\n' + resultString);
 
+
