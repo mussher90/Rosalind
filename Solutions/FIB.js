@@ -1,6 +1,5 @@
 
-
-const fib = (n, k) => {
+export default fib = (n, k) => {
     if(n === 1 || n === 2){
         return 1;
     }
