@@ -34,4 +34,3 @@ while(rna_String.length != 0){
 }
 
 fs.writeFileSync('../Data Sets/Solution Sets/PROT.txt', protein_String);
-console.log(protein_String);
