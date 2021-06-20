@@ -1,11 +1,7 @@
-const fs = require('fs');
 const codons = require("../Library/CodonTable").codons;
+const {fileData, writeFileData} = require("../Library/FileWriter")
 
-//grabs the command line arguments
-//index 2 because the arraya is [node.exe, REVC, "filename"]
-const file = process.argv[2];
-
-var rna_String =  fs.readFileSync(`../Data Sets/Problem Sets/${file}`, 'utf8');
+var rna_String =  fileData();
 
 var protein_String = '';
 
@@ -17,4 +13,4 @@ while(rna_String.length != 0){
         rna_String = rna_String.substring(3)}
 }
 
-fs.writeFileSync('../Data Sets/Solution Sets/PROT.txt', protein_String);
+writeFileData(protein_String);
