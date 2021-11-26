@@ -9,13 +9,11 @@ const factorial = (n) => {
     else return n;
 }
 
-
-
 const binomial =  (n, k) => {
     var num = factorial(n);
     var den_1 = factorial(k);
     var den_2 = factorial(n - k);
-    
+
     return num/(den_1*den_2);
 }
 
