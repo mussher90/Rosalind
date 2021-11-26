@@ -1,17 +1,8 @@
 import * as fs from 'fs';
+import {stringArray} from '../Library/FASTAHelper';
 
 const file = process.argv[2];
 const content = fs.readFileSync(`../Data Sets/Problem Sets/${file}`, 'utf8');
-
-const stringArray = (dnaList: string) => {
-    var regex2 = RegExp("\\r\\n", 'g');
-
-    var regex1 = RegExp(">(\\w+)\r\n", 'g');
-    
-    var modifiedString = dnaList.replace(regex1, '.').replace(regex2, "").split('.');
-
-    return modifiedString.sort((a, b) => a.length - b.length );
-}
 
 const findLCMOptions = (strand_1: string | undefined, strand_2: string | undefined) => {
     var ref_string = "";
@@ -83,7 +74,7 @@ const findLCMOptions = (strand_1: string | undefined, strand_2: string | undefin
 const findLCM = (possibleMatches : string[] | null, list : string[]): string => {
 
     if(possibleMatches == null){
-        return null;
+        return "no possible matches";
     }
 
     for(var x in possibleMatches){
@@ -96,6 +87,8 @@ const findLCM = (possibleMatches : string[] | null, list : string[]): string => 
            return possibleMatches[x];
         }
     }
+
+    return "No possible matches";
 }
 
 
@@ -105,8 +98,6 @@ const findLCM = (possibleMatches : string[] | null, list : string[]): string => 
 //if yes return this substring as the LCM.
 
 var test_array = stringArray(content);
-
-console.log(test_array);
 
 var string1 = test_array.shift();
 
